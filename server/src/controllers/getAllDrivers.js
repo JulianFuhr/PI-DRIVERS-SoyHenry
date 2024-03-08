@@ -1,5 +1,5 @@
-const fs = ('fs');
-const path = ('path')
+const fs = require('fs');
+const path = require('path');
 
 //ruta al archivo json
 const dirversFilePath = path.join(__dirname, '../../api/db.json'); 
