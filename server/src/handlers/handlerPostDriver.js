@@ -5,16 +5,16 @@ const handlerPostDriver = async (req, res) => {
     try {
         
         //extrae los datos , crea un nuevo piloto
-        const { name, lastname, desciption, image, nationaly, birthdate, teams } =
+        const { forename, surname, desciption, image, nationality, dob, teams } =
         req.body;
 
         const result = await postDriver(
-            name,
-            lastname,
+            forename,
+            surname,
             desciption,
             image,
-            nationaly,
-            birthdate,
+            nationality,
+            dob,
             teams
         );
 

@@ -12,32 +12,32 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
 
-    name: {
+    forename: {
       type: DataTypes.STRING,
       allowNull: false,
     },
 
-    lastname: {
+    surname: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     
-    image: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    description: {
+    
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
 
-
-    nationaly: {
+    nationality: {
       type: DataTypes.STRING,
       allowNull: false,
     },
 
-    birthdate: {
+    dob: {
       type: DataTypes.DATEONLY,
       allowNull: false,
     }

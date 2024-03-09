@@ -2,23 +2,23 @@ const { Driver, Team } = require('../db');
 
 //crea un nuevo piloto en la bd
 const postDriver = async (
-    name,
-    lastname,
+    forename,
+    surname,
     description,
     image,
-    nationaly,
-    birthdate,
+    nationality,
+    dob,
     teams
 ) => {
     try {
         //Crea el nuevo piloto
         const newDriver = await Driver.create({
-            name,
-            lastname,
+            forename,
+            surname,
             description,
             image,
-            nationaly,
-            birthdate,
+            nationality,
+            dob,
         });
 
         //separo los nombres de los teams y los limpio

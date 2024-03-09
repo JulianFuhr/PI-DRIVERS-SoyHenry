@@ -9,9 +9,9 @@ const getDriverByNameFromDatabase = async (name) => {
     const drivers = await Driver.findAll({
         where: {
             [Sequelize.Op.or]: [
-                { name: { [Sequelize.Op.iLike]: `%${name}%` } },
-                { lastname: { [Sequelize.Op.iLike]: `%${name}%`} },
-                Sequelize.literal(`name || ' ' || lastname ILIKE '%${name}%'`),
+                { forename: { [Sequelize.Op.iLike]: `%${name}%` } },
+                { surname: { [Sequelize.Op.iLike]: `%${name}%`} },
+                Sequelize.literal(`forename || ' ' || surname ILIKE '%${name}%'`),
             ],
         },
         include: [{ model: Team, through: "DriverTeam" }],
@@ -34,7 +34,7 @@ const getDriverByNameFromServer = async (name) => {
     const nameLowercase = name.toLowerCase();
     const drivers = driversApi.filter((driver) => {
         const fullName =
-         `${driver.name.name} ${driver.name.lastname}`.toLowerCase();
+         `${driver.name.forename} ${driver.name.surname}`.toLowerCase();
          return fullName.includes(nameLowercase);
     });
 
