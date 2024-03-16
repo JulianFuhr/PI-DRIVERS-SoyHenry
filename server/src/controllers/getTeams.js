@@ -1,3 +1,5 @@
+const { getAllDrivers } = require('./getAllDrivers');
+
 const axios = require('axios');
 const { Team } = require('../db');
 
@@ -36,17 +38,12 @@ const getTeamsFromDataBase = async () => {
 
 //obtiene los teams desde la api
 const getTeamsFromAPI = async () => {
-    try {
-        const response = await axios.get(
-            "http://127.0.0.1:3001/drivers/AllDrivers"
-            );
-            const drivers= response.data;
-            const uniqueTeams = getUniqueTeams(drivers);
-            return uniqueTeams;
-    } catch (error) {
-        console.error("Error al obtener los equipos de la API:", error);
-        throw new Error("Error al obtener los equipos de la API");
-    }
+
+    const drivers = getAllDrivers();
+
+    const uniqueTeams = getUniqueTeams(drivers);
+    return uniqueTeams;
+  
 };
 
 //Guarda los teams en la BD

@@ -8,7 +8,7 @@ const { handlerPostDriver } = require("../handlers/handlerPostDriver");
 
 const router = Router();
 
-router.get("AllDrivers", handlerGetAllDrivers);
+router.get("/AllDrivers", handlerGetAllDrivers);
 
 router.get("/driverById/:id", handlerGetDriverById);
 
