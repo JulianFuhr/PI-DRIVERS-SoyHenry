@@ -1,0 +1,98 @@
+.detailPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 87.5vh;
+  }
+  
+  .detailCarga {
+    margin: 200px 0;
+    height: 150px;
+    position: relative;
+    animation: circleAnimation 1.5s linear infinite;
+  }
+  
+  @keyframes circleAnimation {
+    0% {
+      transform: rotate(0deg) translateX(150px);
+    }
+    25% {
+      transform: rotate(-90deg) translateX(150px);
+    }
+    50% {
+      transform: rotate(-180deg) translateX(150px);
+    }
+    75% {
+      transform: rotate(-270deg) translateX(150px);
+    }
+    100% {
+      transform: rotate(-360deg) translateX(150px);
+    }
+  }
+  
+  
+  .detail {
+    width: 65%;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    background-image: url('./assets/fondo-card.jpg');
+    background-size: cover;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1px -1px 25px -5px rgba(255,255,255,0.65);
+    -webkit-box-shadow: 1px -1px 25px -5px rgba(255,255,255,0.65);
+    -moz-box-shadow: 1px -1px 25px -5px rgba(255,255,255,0.65);
+  }
+  
+  .detailInfImg{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    border-bottom: solid rgb(123, 123, 123) 1px;
+  }
+  
+  .detailContName{
+    margin-bottom: 50px;
+  }
+  
+  .detailName {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-block-start: 0;
+    margin-block-end: 20px;
+  }
+  
+  .detailImg {
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+    margin: 30px 0px 30px;
+    object-fit: cover; 
+    object-position: top;
+    border-radius: 5px;
+    border: solid black 1px;
+    background-color: white;
+  }
+  
+  .detailInf {
+    font-size: 28px;
+    color: #ffffff;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .detailDescrip{
+    font-size: 24px;
+    color: #ffffff;
+    margin: 30px 0 20px;
+    text-align: center;
+  }

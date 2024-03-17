@@ -15,7 +15,7 @@ const Nav = () => {
           <Link to={"/home"}>
             <button className="navButton">Home</button>
           </Link>
-          <Link to={"/from"}>
+          <Link to={"/form"}>
             <button className="navButton">Create</button>
           </Link>
           <div className="navSearch">

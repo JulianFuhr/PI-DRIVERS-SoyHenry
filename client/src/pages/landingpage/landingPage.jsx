@@ -5,7 +5,7 @@ const Landing = () => {
   return (
     <div className="pageLanding">
       <div className="conteinerLanding">
-        <img src="./assets/loading.jpg" alt="" />
+        {/* <img src="./assets/fondo-inicio.jpeg" alt="" /> */}
         <Link to="/home">
           <button className="buttonLanding">Click here!</button>
         </Link>

@@ -1,0 +1,17 @@
+.errorPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 87.5vh;
+  }
+  
+  .errorPageTitle{
+    display: inline-block;
+    width: fit-content;
+    color: red;
+    font-size: 40px;
+  }

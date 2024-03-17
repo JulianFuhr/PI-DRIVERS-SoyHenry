@@ -1,0 +1,128 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./assets/image-defualt.png');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 87.5vh;
+  }
+  
+  .formTitle {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-block-start: 10px;
+    margin-block-end: 0;
+    border-bottom: solid white 1px;
+  }
+  
+  .formContainer {
+    width: 80%;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    background-image: url('./assets/fondo-card.jpg');
+    background-size: cover;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1px -1px 25px -5px rgba(255,255,255,0.65);
+    -webkit-box-shadow: 1px -1px 25px -5px rgba(255,255,255,0.65);
+    -moz-box-shadow: 1px -1px 25px -5px rgba(255,255,255,0.65);
+  }
+  
+  .formLabel {
+    font-size: 28px;
+    color: #ffffff;
+    margin: 10px;
+    text-align: left;
+    margin-left: calc(10%);
+  }
+  
+  .formInput {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid black 1px;
+    background-color: white;
+    width: 350px;
+    margin-left: calc(10%);
+  }
+  
+  .formInput::placeholder{
+    font-weight: 600;
+  }
+  
+  .formContInutsTextarea {
+    display: flex;
+  }
+  
+  .formContInputs{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+  }
+  
+  .formButtom {
+    background-color: #3c8dbc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    height: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    text-shadow: 0px 0px 2px white;
+    margin: 0 30px 10px auto;
+  }
+  
+  .formButtom:hover {
+    background-color: #3071a9;
+  }
+  
+  .formTextarea{
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid black 1px;
+    background-color: white;
+    width: 500px;
+    height: 350px;
+    resize: none;
+  }
+  
+  .formTextarea::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .formLabelText{
+    font-size: 28px;
+    color: #ffffff;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .formContTextarea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .errorForm {
+    color: red;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px auto 0 0;
+  }
+  
+  .conatinerError{
+    text-align: center;
+  }
