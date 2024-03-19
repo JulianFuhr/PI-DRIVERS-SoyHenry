@@ -18,48 +18,49 @@ const Home = () => {
   const currentPage = useSelector((state) => state.currentPage);
   const driversPerPage = useSelector((state) => state.driversPerPage);
   const [teams, setTeams] = useState([]);
-
+  console.log(filteredDrivers,"entro HOME Fil");
   useEffect(() => {
     fetch("http://127.0.0.1:3001/drivers/teams")
-      .then((response) => response.json())
-      .then((data) => setTeams(data))
-      .catch((error) => console.error("Error fetching teams:", error));
+    .then((response) => response.json())
+    .then((data) => setTeams(data))
+    .catch((error) => console.error("Error fetching teams:", error));
   }, []);
-
+  
   useEffect(() => {
     const pageBeforeFilter = currentPage;
+    console.log(filterstate,"filterstate");
     dispatch(setFilter(filterstate));
     const totalPagesAfterFilter = Math.ceil(
       filteredDrivers.length / driversPerPage
-    );
-    if (totalPagesAfterFilter === 0) {
-      return;
-    }
-    if (pageBeforeFilter > totalPagesAfterFilter) {
-      dispatch(setPage(totalPagesAfterFilter));
-    }
-  }, [
-    dispatch,
-    filterstate,
-    driversPerPage,
-    filteredDrivers.length,
-    currentPage,
-  ]);
-
-  useEffect(() => {
-    dispatch(fetchDrivers())
+      );
+      if (totalPagesAfterFilter === 0) {
+        return;
+      }
+      if (pageBeforeFilter > totalPagesAfterFilter) {
+        dispatch(setPage(totalPagesAfterFilter));
+      }
+    }, [
+      dispatch,
+      filterstate,
+      driversPerPage,
+      filteredDrivers.length,
+      currentPage,
+    ]);
+    
+    useEffect(() => {
+      dispatch(fetchDrivers())
       .then(() => setLoading(false))
       .catch((error) =>
-        console.error("Error al cargar los conductores:", error)
+      console.error("Error al cargar los conductores:", error)
       );
-  }, [dispatch]);
-
-  const handleFilter = (filterData) => {
-    setFilterstate(filterData);
-  };
-
-  return (
-    <main className="home">
+    }, [dispatch]);
+    
+    const handleFilter = (filterData) => {
+      setFilterstate(filterData);
+    };
+    
+    return (
+      <main className="home">
       <Filter teams={teams} handleFilter={handleFilter} />
       <section className="homeCards">
         {loading ? (

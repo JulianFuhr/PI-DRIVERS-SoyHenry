@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./searchBar.style.css";
 import { useDispatch } from "react-redux";
-import { searchDrivers } from "../../redux/actions/actionCreators";
+import { searchDriverByName } from "../../redux/actions/actionCreators";
+import { fetchDrivers } from "../../redux/actions/actionCreators";
 
 export default function SearchBar() {
   const [name, setName] = useState("");
@@ -13,8 +14,14 @@ export default function SearchBar() {
 
   const search = () => {
     if (name.trim() !== "") {
-      dispatch(searchDrivers(name));
-      setName("");
+      dispatch(searchDriverByName(name));
+      // setName("");
+    } else {
+      dispatch(fetchDrivers())
+        .then(() => {})
+        .catch((error) =>
+          console.error("Error al cargar los conductores:", error)
+        );
     }
   };
 

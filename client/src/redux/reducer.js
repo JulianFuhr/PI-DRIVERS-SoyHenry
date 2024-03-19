@@ -5,6 +5,7 @@ import {
   CREATE_DRIVER_SUCCESS,
   FETCH_DRIVERS,
   FETCH_DRIVER_BY_ID,
+  FETCH_DRIVER_BY_NAME,
   FILTER,
   ORDER_DOB,
   ORDER_NAME,
@@ -41,15 +42,15 @@ const reducer = (state = initialState, action) => {
     case SEARCH_DRIVERS:
       filteredDriversSearch = action.payload.filter((driver) =>
         state.drivers.some((existingDriver) => existingDriver.id !== driver.id)
-        );
-        console.log(filteredDriversSearch, "aa");
+      );
+      console.log(filteredDriversSearch, "aa");
       orderedFilteredDriversSearch = sortDrivers(
         filteredDriversSearch,
         state.selectedOrder,
         state.selectedDirection
       );
 
-      console.log(orderedFilteredDriversSearch,"bbb");
+      console.log(orderedFilteredDriversSearch, "bbb");
       newDrivers = [
         ...orderedFilteredDriversSearch.filter(
           (driver) =>
@@ -59,7 +60,7 @@ const reducer = (state = initialState, action) => {
         ),
         ...state.drivers,
       ];
-     
+
       mergedDrivers = mergeDriversWithFilter(
         state.filteredDrivers,
         orderedFilteredDriversSearch,
@@ -74,19 +75,21 @@ const reducer = (state = initialState, action) => {
       };
 
     case FETCH_DRIVERS:
-      if (state.drivers.length === 0) {
-        return {
-          ...state,
-          drivers: action.payload,
-          filteredDrivers: action.payload,
-          loading: false,
-        };
-      } else {
-        return {
-          ...state,
-          loading: false,
-        };
+      return {
+        ...state,
+        drivers: action.payload,
+        filteredDrivers: action.payload,
+        loading: false,
       }
+
+      
+    case FETCH_DRIVER_BY_NAME:
+      console.log("entro-reducer", action.payload, state);
+      return {
+        ...state,
+        filteredDrivers: action.payload,
+        drivers: action.payload,
+      };
 
     case FETCH_DRIVER_BY_ID:
       return {
@@ -155,7 +158,7 @@ const reducer = (state = initialState, action) => {
           (driver) => driver && !driver.driverRef
         );
       }
-      8;
+      
 
       filteredDrivers = sortDrivers(
         filteredDrivers,

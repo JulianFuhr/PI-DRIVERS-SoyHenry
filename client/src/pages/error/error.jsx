@@ -11,11 +11,11 @@ export default function Error404() {
   return (
     <main className="errorPage">
       <h2 className="errorPageTitle">ERROR404</h2>
-      <img
+      {/* <img
         className="detailCarga"
         src="/assets/loading.jpg"
         alt="Cargando..."
-      />
+      /> */}
     </main>
   );
 }

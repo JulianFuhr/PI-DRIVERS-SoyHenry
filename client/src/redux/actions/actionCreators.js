@@ -4,6 +4,7 @@ import {
   FETCH_DRIVERS,
   SEARCH_DRIVERS,
   FETCH_DRIVER_BY_ID,
+  FETCH_DRIVER_BY_NAME,
   PAGINATE,
   ORDER_DOB,
   ORDER_NAME,
@@ -92,18 +93,24 @@ export const searchDrivers = (name) => {
 };
 
 export const searchDriverByName = (name) => {
-  return async () => {
+  return async (dispatch) => {
     try {
       const response = await axios.get(
         `http://127.0.0.1:3001/drivers/driverByName/name?name=${name}`
       );
       const { data } = response;
-
+      console.log(data,"data=0");
+      
       if (!Array.isArray(data) || data.length === 0) {
+        console.log("entro null");
         return null;
       }
-
-      return data[0];
+      
+      dispatch({
+        type: FETCH_DRIVER_BY_NAME,
+        payload: data,
+      });
+      
     } catch (error) {
       console.error("Error al buscar piloto por nombre:", error);
       return null;
@@ -119,7 +126,6 @@ export const fetchDrivers = () => {
         "http://127.0.0.1:3001/drivers/AllDrivers"
       );
       const data = response.data;
-      console.log(data);
       
       dispatch({
         type: FETCH_DRIVERS,
