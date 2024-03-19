@@ -16,6 +16,6 @@ router.get("/teams", getTeamsHandler);
 
 router.get("/driverByName/name", getDriverByName);
 
-router.get("/addDriver", handlerPostDriver);
+router.post("/addDriver", handlerPostDriver);
 
 module.exports = router;
